@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aegis — Auth that disappears into the background</title>
+    <meta
+      name="description"
+      content="Passwordless auth, passkeys, and adaptive MFA in a few lines of code."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- nav -->
+    <header class="nav">
+      <nav class="nav-inner">
+        <a class="brand" href="#">
+          <span class="brand-mark">▲</span> Aegis
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#features">Security</a>
+          <a href="#" >Docs</a>
+        </div>
+        <a class="btn btn-sm" href="#waitlist">Get access</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- hero -->
+      <section class="hero">
+        <div class="aurora" aria-hidden="true"></div>
+        <div class="grid-bg" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <a class="pill reveal" href="#waitlist" style="--d: 0ms">
+            <span class="dot"></span> Now in private beta — join the waitlist
+          </a>
+
+          <h1 class="headline">
+            <span class="word" style="--d: 120ms">Auth</span>
+            <span class="word" style="--d: 190ms">that</span>
+            <span class="word grad" style="--d: 260ms">disappears</span>
+            <span class="word" style="--d: 330ms">into</span>
+            <span class="word" style="--d: 400ms">the</span>
+            <span class="word" style="--d: 470ms">background.</span>
+          </h1>
+
+          <p class="sub reveal" style="--d: 620ms">
+            Passkeys, passwordless, and adaptive MFA in a few lines of code.
+            Drop it in, and your users just… sign in.
+          </p>
+
+          <div class="cta reveal" style="--d: 720ms">
+            <a class="btn btn-lg" href="#waitlist">Get early access</a>
+            <a class="btn btn-lg btn-outline" href="#features">See how it works</a>
+          </div>
+
+          <div class="code-card float reveal" style="--d: 820ms">
+            <div class="code-bar">
+              <span class="d red"></span><span class="d yellow"></span
+              ><span class="d green"></span>
+              <span class="code-file">sign-in.py</span>
+            </div>
+            <pre class="code"><span class="kw">from</span> aegis <span class="kw">import</span> Aegis
+
+user = <span class="fn">Aegis</span>().<span class="fn">sign_in</span>(
+    method=<span class="str">"passkey"</span>,
+    on_success=<span class="kw">lambda</span> u: go(<span class="str">"/app"</span>),
+)</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- features -->
+      <section id="features" class="features">
+        <div class="section-head reveal-up">
+          <h2>Everything auth should be.<br /><span class="grad">Nothing it shouldn't.</span></h2>
+          <p>The security team's checklist and the frontend dev's dream, in one SDK.</p>
+        </div>
+        <div class="feature-grid" id="feature-grid"></div>
+      </section>
+
+      <!-- waitlist -->
+      <section id="waitlist" class="waitlist">
+        <div class="waitlist-inner">
+          <div class="reveal-up">
+            <span class="pill"><span class="dot"></span> Private beta</span>
+            <h2 class="wl-title">Get on the <span class="grad">waitlist</span>.</h2>
+            <p class="wl-copy">
+              Drop your details and we'll send a welcome email right away. When
+              your invite is ready, it lands in the same inbox.
+            </p>
+            <ul class="checks">
+              <li><span class="check">✓</span> Instant welcome email</li>
+              <li><span class="check">✓</span> Priority onboarding for early teams</li>
+              <li><span class="check">✓</span> No credit card, no commitment</li>
+            </ul>
+          </div>
+
+          <div class="form-card reveal-up">
+            <form id="waitlist-form" novalidate>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Ada Lovelace" autocomplete="name" />
+                <p class="err" data-err="name"></p>
+              </div>
+              <div class="field">
+                <label for="email">Work email</label>
+                <input id="email" name="email" type="email" placeholder="ada@company.com" autocomplete="email" />
+                <p class="err" data-err="email"></p>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+1 555 123 4567" autocomplete="tel" />
+                <p class="err" data-err="phone"></p>
+              </div>
+              <div class="field">
+                <label for="company">Company <span class="muted">(optional)</span></label>
+                <input id="company" name="company" placeholder="Analytical Engines Inc." autocomplete="organization" />
+              </div>
+              <button class="btn btn-lg btn-block" type="submit" id="submit-btn">
+                Join the waitlist
+              </button>
+              <p class="fine">No spam. One welcome email, then your invite. Unsubscribe anytime.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="brand"><span class="brand-mark">▲</span> Aegis</div>
+          <p id="copy"></p>
+        </div>
+      </footer>
+    </main>
+
+    <div id="toast-wrap" class="toast-wrap"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

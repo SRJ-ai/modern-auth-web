@@ -1,0 +1,8 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+psycopg[binary]==3.3.4
+psycopg_pool==3.3.1
+pgserver==0.1.4
+pydantic[email]==2.13.4
+faker==40.36.0
+python-dotenv==1.2.2
